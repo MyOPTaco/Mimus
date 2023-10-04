@@ -21,6 +21,9 @@ public class Enemy_AIRecode : MonoBehaviour
     public float walkPointRange;
     public bool objectInWay;
 
+    //Noise Detection
+    public Transform noiseSource;
+    public bool noiseDetection;
 
     ////Attacking
     //public float timeBetweenAttacks;
@@ -50,6 +53,9 @@ public class Enemy_AIRecode : MonoBehaviour
         if (playerInSightRange && !objectInWay)
         {
             ChasePlayer();
+        }if (noiseDetection == true)
+        {
+            PatrolNoise();
         }
         else
         {
@@ -86,6 +92,15 @@ public class Enemy_AIRecode : MonoBehaviour
     private void ChasePlayer()
     {
         agent.SetDestination(player.position);
+    }
+    public void PatrolNoise()
+    {
+        agent.SetDestination(noiseSource.position);
+        if (transform.position == noiseSource.position)
+        {
+            noiseDetection = false;
+            //will expand upon this and add a condensed patrol once that point is reached, and will have it move out of the room after a set period of time
+        }
     }
     //private void AttackPlayer()
     //{

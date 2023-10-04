@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class Velocity_Noise : MonoBehaviour
 {
+    //This Script is only to be applied to grabable objects, having alot of these may be a bit resource heavy
     private Rigidbody rb;
-    public float speed;
-    public float BiggestSpeed;
-    private Vector3 CurrentVelo;
-    public bool HathCollided;
+    public float biggestSpeed, speed, noiseMulti;
+    private Vector3 currentVelo;
+    public Transform noiseLocation;
+    public bool hathCollided;
+    private float noiseRadius;
+    public LayerMask whatIsEnemy;
+    public GameObject Enemy;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,21 +22,32 @@ public class Velocity_Noise : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CurrentVelo = rb.velocity;
-        speed = CurrentVelo.magnitude;
+        currentVelo = rb.velocity;
+        speed = currentVelo.magnitude;
     }
 
     void DrawNoiseCircle()
     {
-
+         noiseRadius = biggestSpeed * noiseMulti;
+         Collider[] PossiblenoiseDetection = Physics.OverlapSphere(transform.position, noiseRadius, whatIsEnemy);
+        foreach (Collider whatIsEnemy in PossiblenoiseDetection)
+        {
+            Enemy.GetComponent<Enemy_AIRecode>().noiseDetection = true;
+            Enemy.GetComponent<Enemy_AIRecode>().noiseSource = noiseLocation;
+        }
     }
     private void OnTriggerEnter(Collider other)
     {
-        BiggestSpeed = speed;
+        biggestSpeed = speed;
     }
     private void OnCollisionEnter(Collision collision)
     {
-        HathCollided = true;
-        DrawNoiseCircle();
+        hathCollided = true;
+        if(biggestSpeed > 3f)
+        {
+            
+            DrawNoiseCircle();
+        }
+        
     }
 }

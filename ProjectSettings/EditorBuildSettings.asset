@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Importing_VR/VR_Testing.unity
+    guid: 2f00acb5a827c4746bf66b04aae61e87
+  - enabled: 1
     path: Assets/Ian/Main Menu.unity
     guid: 89e9426c1fa33f34b94e95d0a797632d
   - enabled: 1
@@ -13,4 +16,5 @@ EditorBuildSettings:
     guid: e3f11520521226d4c9389a1d9dfd4798
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: a7fd6279eb56d444e93b9a21189dace5, type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: b34593ab36ed0b7408422e43bd155b48, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 9d58ba4a4816c7a4bae034346549dd03, type: 2}

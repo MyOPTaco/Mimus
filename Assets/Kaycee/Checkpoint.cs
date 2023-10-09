@@ -7,7 +7,7 @@ public class Checkpoint : MonoBehaviour
     public string checkpointID;
     public Transform Player;
     public float XSave, YSave, ZSave;
-    //trigger this event upon interaction with objective, will save and load location of the player upon interaction with object
+    //trigger this function upon interaction with objective, SHOULD save and load location and progress of the player upon interaction with object
     void SaveLoc()
     {
         XSave = Player.transform.position.x;

@@ -14,6 +14,9 @@ public class Enemy_AIRecode : MonoBehaviour
     public Vector3 collision = Vector3.zero;
 
 
+    //Audio / Scream
+    public int randomizedNum;
+
 
     //Patroling
     public Vector3 walkPoint;
@@ -36,6 +39,8 @@ public class Enemy_AIRecode : MonoBehaviour
 
     private void Awake()
     {
+        //InvokeRepeating()
+        randomizedNum = Random.Range(180, 360);
         player = GameObject.Find("Player").transform;
         agent = GetComponent<NavMeshAgent>();
     }
@@ -65,6 +70,10 @@ public class Enemy_AIRecode : MonoBehaviour
         //if (playerInAttackRange && playerInSightRange) AttackPlayer();
     }
 
+    private void MakeNoise()
+    {
+
+    }
     private void Patroling()
     {
         if (!walkPointSet) SearchWalkPoint();

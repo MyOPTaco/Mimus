@@ -8,6 +8,7 @@ public class Checkpoint : MonoBehaviour
     public Transform Player;
     public float XSave, YSave, ZSave;
     //trigger this function upon interaction with objective, SHOULD save and load location and progress of the player upon interaction with object
+    //also will need a script on player to grab the player prefs value and respawn them to the appointed location as well as tasks that have been completed on scene load
     void SaveLoc()
     {
         XSave = Player.transform.position.x;

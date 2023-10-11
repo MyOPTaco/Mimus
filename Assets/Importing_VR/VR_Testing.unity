@@ -1282,7 +1282,7 @@ MonoBehaviour:
   m_AttachTransform: {fileID: 0}
   m_KeepSelectedTargetValid: 1
   m_DisableVisualsWhenBlockedInGroup: 1
-  m_StartingSelectedInteractable: {fileID: 0}
+  m_StartingSelectedInteractable: {fileID: 43801331}
   m_StartingTargetFilter: {fileID: 0}
   m_HoverEntered:
     m_PersistentCalls:
@@ -2082,7 +2082,7 @@ MonoBehaviour:
   m_AttachTransform: {fileID: 0}
   m_KeepSelectedTargetValid: 1
   m_DisableVisualsWhenBlockedInGroup: 1
-  m_StartingSelectedInteractable: {fileID: 43801331}
+  m_StartingSelectedInteractable: {fileID: 1745596203}
   m_StartingTargetFilter: {fileID: 0}
   m_HoverEntered:
     m_PersistentCalls:
@@ -2230,6 +2230,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 365378461e71fb547b7a28e8046cf533, type: 3}
+--- !u!114 &1745596203 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4228721885278302748, guid: 365378461e71fb547b7a28e8046cf533, type: 3}
+  m_PrefabInstance: {fileID: 1745596202}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1875787081
 GameObject:
   m_ObjectHideFlags: 0
@@ -2768,6 +2779,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1687642288500503201, guid: 2d27b2517091ff342a4dba5559d70912, type: 3}
+      propertyPath: m_MovementType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1687642288500503201, guid: 2d27b2517091ff342a4dba5559d70912, type: 3}
       propertyPath: m_InteractionManager
       value: 

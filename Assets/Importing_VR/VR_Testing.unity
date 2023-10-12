@@ -2697,7 +2697,7 @@ PrefabInstance:
     - target: {fileID: 8325479125954722528, guid: 4bc59b002a26f154d88bd913c6c431dd, type: 3}
       propertyPath: m_ModelPrefab
       value: 
-      objectReference: {fileID: 1652159229903271203, guid: 7c5865c0fe1bb5c4a83b166ea241eddf, type: 3}
+      objectReference: {fileID: 1338963032476924726, guid: 9498496790c31f04c880bbf3c5b4c1d1, type: 3}
     - target: {fileID: 8325479125954722535, guid: 4bc59b002a26f154d88bd913c6c431dd, type: 3}
       propertyPath: m_AllowAnchorControl
       value: 0

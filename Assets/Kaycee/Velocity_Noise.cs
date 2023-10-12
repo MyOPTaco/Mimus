@@ -43,7 +43,7 @@ public class Velocity_Noise : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         hathCollided = true;
-        if(biggestSpeed > 3f)
+        if(biggestSpeed > 2f)
         {
             
             DrawNoiseCircle();

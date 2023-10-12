@@ -125,6 +125,7 @@ GameObject:
   - component: {fileID: 4228721885278302739}
   - component: {fileID: 4228721885278302748}
   - component: {fileID: 4228721885278302749}
+  - component: {fileID: 4448556832775587174}
   m_Layer: 0
   m_Name: Better_Bottle
   m_TagString: Untagged
@@ -359,6 +360,20 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.001
-  m_Height: 0.0051691527
+  m_Height: 0.005
   m_Direction: 2
-  m_Center: {x: 0, y: 1.5666098e-18, z: 0.00065889244}
+  m_Center: {x: 0, y: 2.9051907e-19, z: 0.0007738325}
+--- !u!136 &4448556832775587174
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4228721885278302750}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.0015
+  m_Height: 0.005
+  m_Direction: 2
+  m_Center: {x: 0, y: 2.9051907e-19, z: 0.0007738325}

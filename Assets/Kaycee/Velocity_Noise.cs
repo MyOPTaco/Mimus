@@ -32,8 +32,9 @@ public class Velocity_Noise : MonoBehaviour
          Collider[] PossiblenoiseDetection = Physics.OverlapSphere(transform.position, noiseRadius, whatIsEnemy);
         foreach (Collider _ in PossiblenoiseDetection)
         {
-            Enemy.GetComponent<Enemy_AIRecode>().noiseDetection = true;
             Enemy.GetComponent<Enemy_AIRecode>().noiseSource = noiseLocation;
+            Enemy.GetComponent<Enemy_AIRecode>().noiseDetection = true;
+            
         }
     }
     private void OnTriggerEnter(Collider other)

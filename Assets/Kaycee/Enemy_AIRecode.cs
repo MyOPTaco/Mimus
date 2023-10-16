@@ -105,7 +105,7 @@ public class Enemy_AIRecode : MonoBehaviour
     public void PatrolNoise()
     {
         agent.SetDestination(noiseSource.position);
-        if (transform.position.x == noiseSource.position.x && transform.position.z == noiseSource.position.z)
+        if (Vector3.Distance(this.gameObject.transform.position, noiseSource.position) < 2.5f)
         {
             
             noiseDetection = false;

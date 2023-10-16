@@ -16,6 +16,7 @@ public class Enemy_AIRecode : MonoBehaviour
 
     //Audio / Scream
     public int randomizedNum;
+    public AudioSource playerrrrrr;
 
 
     //Patroling
@@ -39,7 +40,7 @@ public class Enemy_AIRecode : MonoBehaviour
 
     private void Awake()
     {
-        //InvokeRepeating()
+        InvokeRepeating("MakeNoise", randomizedNum, randomizedNum);
         randomizedNum = Random.Range(180, 360);
         player = GameObject.Find("Player").transform;
         agent = GetComponent<NavMeshAgent>();
@@ -70,9 +71,11 @@ public class Enemy_AIRecode : MonoBehaviour
         //if (playerInAttackRange && playerInSightRange) AttackPlayer();
     }
 
-    private void MakeNoise()
+    void MakeNoise()
     {
-
+        playerrrrrr.Play(0);
+        noiseSource = player;
+        noiseDetection = true;
     }
     private void Patroling()
     {
@@ -109,7 +112,7 @@ public class Enemy_AIRecode : MonoBehaviour
         {
             
             noiseDetection = false;
-            return;
+            
             //will expand upon this and add a condensed patrol once that point is reached, and will have it move out of the room after a set period of time
         }
     }

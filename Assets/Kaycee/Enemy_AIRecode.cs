@@ -105,9 +105,11 @@ public class Enemy_AIRecode : MonoBehaviour
     public void PatrolNoise()
     {
         agent.SetDestination(noiseSource.position);
-        if (transform.position == noiseSource.position)
+        if (transform.position.x == noiseSource.position.x && transform.position.z == noiseSource.position.z)
         {
+            
             noiseDetection = false;
+            return;
             //will expand upon this and add a condensed patrol once that point is reached, and will have it move out of the room after a set period of time
         }
     }

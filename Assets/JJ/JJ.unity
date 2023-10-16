@@ -572,6 +572,7 @@ MonoBehaviour:
   lastHit: {fileID: 0}
   collision: {x: 0, y: 0, z: 0}
   randomizedNum: 0
+  playerrrrrr: {fileID: 1270925767}
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 5
   objectInWay: 0
@@ -2500,7 +2501,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4228721885278302750, guid: 365378461e71fb547b7a28e8046cf533, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4448556832775587174, guid: 365378461e71fb547b7a28e8046cf533, type: 3}
       propertyPath: m_Enabled

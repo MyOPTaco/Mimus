@@ -40,7 +40,7 @@ public class Enemy_AIRecode : MonoBehaviour
 
     private void Awake()
     {
-        InvokeRepeating("MakeNoise", randomizedNum, randomizedNum);
+        InvokeRepeating(nameof(MakeNoise), randomizedNum, randomizedNum);
         randomizedNum = Random.Range(180, 360);
         player = GameObject.Find("Player").transform;
         agent = GetComponent<NavMeshAgent>();

@@ -9,7 +9,7 @@ public class AutomicDoor : MonoBehaviour
 
     private bool moving = false;
     private bool opening = true;
-    private Vector3 startPos;
+    public Vector3 startPos;
     private float delay = 0.0f;
 
     // Start is called before the first frame update
@@ -34,10 +34,10 @@ public class AutomicDoor : MonoBehaviour
         }
     }
 
-    void MoveDoor (Vector3 goalPos)
+    void MoveDoor(Vector3 goalPos)
     {
         float dist = Vector3.Distance(transform.position, goalPos);
-        if(dist > .1f)
+        if(dist > .01f)
         {
             transform.position = Vector3.Lerp(transform.position, goalPos, speed * Time.deltaTime);
         }

@@ -10,7 +10,7 @@ public class AutomicDoor : MonoBehaviour
     private bool moving = false;
     private bool opening = true;
     public Vector3 startPos;
-    private float delay = 0.0f;
+    public float delay = 0.0f;
 
     // Start is called before the first frame update
     void Start()

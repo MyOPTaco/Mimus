@@ -7,7 +7,7 @@ public class Coord_Notes : MonoBehaviour
     //2.03 4.75 1.7
 //2.32 4.75 1.754
 
-//0.54Z for switches in comparison with holders while active
+//0.54Z for switches in comparison with holders, +.54 if facing right -.54 when facing left
 //change .6 for changes in the y direction
 //change of .7 in Z direction for switch holders
 

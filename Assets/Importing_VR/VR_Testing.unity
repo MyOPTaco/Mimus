@@ -890,6 +890,54 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f5c273b5d7c691409d10a0efdaaeac2, type: 3}
+--- !u!1 &299104670
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 299104671}
+  m_Layer: 0
+  m_Name: "My name is JJ Wise, I am a senior at Jackson High School in Everett, Washington.
+    I am also in my second year at Sno-Isle Technical Skill Center.  Sometimes events
+    happen that make a lasting impact on your life, last spring I experienced \u043Ene
+    of those events.  I was involved in a serious automobile accident.  Recovery
+    has taken months.  But that time has given me time to think.  I realized how
+    quickly life could change.  I have decided not to take my future for granted. 
+    I am determined to have a career that I enjoy and use all my skills and abilities,
+    \u043Ene that provides room for professional and personal growth.    Ever since
+    elementary I've wanted to be a game designer. It seemed fun and I'd be able to
+    do what I love . When I was in 5th grade I joined the robotics club at school. 
+    That was my first exposure to coding and I loved it.  The ability to turn code
+    to action was fascinating. After that I forgot about coding until my junior year
+    in high school. I signed up for Video Game design at Sno isle and from there
+    I started to perfect my skills in coding and teamwork.   In Sno isle I learned
+    how to be a team leader and manage my time and my team. I work really well with
+    others and I make sure that everyone is heard. I'm really good at adapting to
+    stressful situations and I'm able to learn really fast. Getting the things I
+    need done on time is a number one priority because I never want to let my team
+    down. "
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &299104671
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 299104670}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 31.390797, y: -1.2845688, z: -3.4651124}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 24
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &318576574
 GameObject:
   m_ObjectHideFlags: 0

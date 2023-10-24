@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Enemy_AIRecode : MonoBehaviour
 {
+    #region assets
     public NavMeshAgent agent;
 
     public Transform player;
@@ -20,6 +21,10 @@ public class Enemy_AIRecode : MonoBehaviour
 
 
     //Patroling
+    public Vector3[] office, officeB, officeC, officeD, officeE, officeF;
+    private bool patrol1, patrol2, patrol3, patrol4, patrol5, patrol6;
+    private bool currentlyPatrolling;
+    public int randomRoom;
     public Vector3 walkPoint;
     bool walkPointSet;
     public float walkPointRange;
@@ -37,7 +42,9 @@ public class Enemy_AIRecode : MonoBehaviour
     //States
     public float sightRange, attackRange;
     public bool playerInSightRange, playerInAttackRange;
-
+    #endregion
+  
+    
     private void Awake()
     {
         InvokeRepeating(nameof(MakeNoise), randomizedNum, randomizedNum);
@@ -45,7 +52,9 @@ public class Enemy_AIRecode : MonoBehaviour
         player = GameObject.Find("Player").transform;
         agent = GetComponent<NavMeshAgent>();
     }
-
+    
+   
+   
     private void Update()
     {
         //check for sight and attack range
@@ -62,21 +71,41 @@ public class Enemy_AIRecode : MonoBehaviour
         }if (noiseDetection == true)
         {
             PatrolNoise();
-        }
-        else
+        }if (currentlyPatrolling == false)
         {
             Patroling();
+        }else
+        {
+            randomRoom = Random.Range(1, 5);
         }
+        
 
         //if (playerInAttackRange && playerInSightRange) AttackPlayer();
     }
+    
 
+    #region noisePatrol
     void MakeNoise()
     {
+        randomizedNum = Random.Range(180, 360);
         playerrrrrr.Play(0);
         noiseSource = player;
         noiseDetection = true;
     }
+    public void PatrolNoise()
+    {
+        agent.SetDestination(noiseSource.position);
+        if (Vector3.Distance(this.gameObject.transform.position, noiseSource.position) < 2.5f)
+        {
+            
+            noiseDetection = false;
+            
+            //will expand upon this and add a condensed patrol once that point is reached, and will have it move out of the room after a set period of time
+        }
+    }
+    #endregion
+
+    #region patrol
     private void Patroling()
     {
         if (!walkPointSet) SearchWalkPoint();
@@ -105,17 +134,9 @@ public class Enemy_AIRecode : MonoBehaviour
     {
         agent.SetDestination(player.position);
     }
-    public void PatrolNoise()
-    {
-        agent.SetDestination(noiseSource.position);
-        if (Vector3.Distance(this.gameObject.transform.position, noiseSource.position) < 2.5f)
-        {
-            
-            noiseDetection = false;
-            
-            //will expand upon this and add a condensed patrol once that point is reached, and will have it move out of the room after a set period of time
-        }
-    }
+    #endregion
+
+    #region misc
     //private void AttackPlayer()
     //{
     //    //Make sure enemy dosent move
@@ -164,4 +185,5 @@ public class Enemy_AIRecode : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, sightRange);
         Gizmos.DrawLine(this.transform.position, player.position);
     }
+    #endregion
 }

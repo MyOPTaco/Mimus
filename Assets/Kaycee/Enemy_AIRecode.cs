@@ -22,17 +22,20 @@ public class Enemy_AIRecode : MonoBehaviour
 
     //Patroling
     public Vector3[] office, officeB, officeC, officeD, officeE, officeF;
-    private bool patrol1, patrol2, patrol3, patrol4, patrol5, patrol6;
+    private Vector3[] roomStorage;
     private bool currentlyPatrolling;
-    public int randomRoom;
+    public int currentPointIndex;
+    public int randomizedRoom;
     public Vector3 walkPoint;
     bool walkPointSet;
     public float walkPointRange;
     public bool objectInWay;
+    public int waitTime;
 
     //Noise Detection
     public Transform noiseSource;
     public bool noiseDetection;
+    public int detectionRange;
 
     ////Attacking
     //public float timeBetweenAttacks;
@@ -76,7 +79,7 @@ public class Enemy_AIRecode : MonoBehaviour
             Patroling();
         }else
         {
-            randomRoom = Random.Range(1, 5);
+            randomizedRoom = Random.Range(1, 7);
         }
         
 
@@ -103,6 +106,11 @@ public class Enemy_AIRecode : MonoBehaviour
             //will expand upon this and add a condensed patrol once that point is reached, and will have it move out of the room after a set period of time
         }
     }
+    IEnumerator Listening()
+    {
+        yield return new WaitForSeconds(waitTime);
+       sightRange = sightRange + 7f;
+    }
     #endregion
 
     #region patrol
@@ -116,16 +124,43 @@ public class Enemy_AIRecode : MonoBehaviour
         Vector3 distanceToWalkPoint = transform.position - walkPoint;
 
         //Walkpoint reached
-        if (distanceToWalkPoint.magnitude < 1f)
+        if (distanceToWalkPoint.magnitude < 0.1f)
+            currentPointIndex++;
             walkPointSet = false;
     }
     private void SearchWalkPoint()
     {
-        //Calculate random point in range
-        float randomZ = Random.Range(-walkPointRange, walkPointRange);
-        float randomX = Random.Range(-walkPointRange, walkPointRange);
+        if(randomizedRoom == 1)
+        {
+            
+            if(currentPointIndex + 1 < office.Length)
+            {
+                walkPoint = office[currentPointIndex];
+                walkPointSet = true;
+            }
+            else
+            {
+                StartCoroutine(Listening());
+               
+            }
+            
+        }
+        if (randomizedRoom == 2)
+        {
 
-        walkPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
+        }
+        if (randomizedRoom == 3)
+        {
+
+        }
+        if (randomizedRoom == 4)
+        {
+
+        }
+        if (randomizedRoom == 5)
+        {
+
+        }
 
         if (Physics.Raycast(walkPoint, -transform.up, 2f, whatIsGround))
             walkPointSet = true;
@@ -135,6 +170,8 @@ public class Enemy_AIRecode : MonoBehaviour
         agent.SetDestination(player.position);
     }
     #endregion
+
+    
 
     #region misc
     //private void AttackPlayer()

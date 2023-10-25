@@ -110,6 +110,7 @@ public class Enemy_AIRecode : MonoBehaviour
     {
         yield return new WaitForSeconds(waitTime);
        sightRange = sightRange + 7f;
+        currentlyPatrolling = false;
     }
     #endregion
 
@@ -130,6 +131,7 @@ public class Enemy_AIRecode : MonoBehaviour
     }
     private void SearchWalkPoint()
     {
+        currentlyPatrolling = true;
         if(randomizedRoom == 1)
         {
             
@@ -147,7 +149,16 @@ public class Enemy_AIRecode : MonoBehaviour
         }
         if (randomizedRoom == 2)
         {
+            if (currentPointIndex + 1 < officeB.Length)
+            {
+                walkPoint = officeB[currentPointIndex];
+                walkPointSet = true;
+            }
+            else
+            {
+                StartCoroutine(Listening());
 
+            }
         }
         if (randomizedRoom == 3)
         {
@@ -171,7 +182,10 @@ public class Enemy_AIRecode : MonoBehaviour
     }
     #endregion
 
-    
+    private void newRoom()
+    {
+
+    }
 
     #region misc
     //private void AttackPlayer()

@@ -573,12 +573,22 @@ MonoBehaviour:
   collision: {x: 0, y: 0, z: 0}
   randomizedNum: 0
   playerrrrrr: {fileID: 1270925767}
+  office: []
+  officeB: []
+  officeC: []
+  officeD: []
+  officeE: []
+  officeF: []
+  currentPointIndex: 0
+  randomizedRoom: 0
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 5
   objectInWay: 0
+  waitTime: 0
   noiseSource: {fileID: 0}
   noiseDetection: 0
-  sightRange: 15
+  detectionRange: 0
+  sightRange: 5
   attackRange: 5
   playerInSightRange: 0
   playerInAttackRange: 0

@@ -22,7 +22,8 @@ public class Enemy_AIRecode : MonoBehaviour
 
     //Patroling
     public Vector3[] office, officeB, officeC, officeD, officeE, officeF;
-    private Vector3[] roomStorage;
+    public Vector3[] startPoints;
+    private int roomStorage;
     private bool currentlyPatrolling;
     public int currentPointIndex;
     public int randomizedRoom;
@@ -74,13 +75,15 @@ public class Enemy_AIRecode : MonoBehaviour
         }if (noiseDetection == true)
         {
             PatrolNoise();
-        }if (currentlyPatrolling == false)
+        }else 
         {
             Patroling();
-        }else
-        {
-            randomizedRoom = Random.Range(1, 7);
         }
+        //else
+        //{
+        //    randomizedRoom = Random.Range(1, 7);
+            
+        //}
         
 
         //if (playerInAttackRange && playerInSightRange) AttackPlayer();
@@ -110,6 +113,7 @@ public class Enemy_AIRecode : MonoBehaviour
     {
         yield return new WaitForSeconds(waitTime);
        sightRange = sightRange + 7f;
+        currentPointIndex = 0;
         currentlyPatrolling = false;
     }
     #endregion
@@ -126,15 +130,18 @@ public class Enemy_AIRecode : MonoBehaviour
 
         //Walkpoint reached
         if (distanceToWalkPoint.magnitude < 0.1f)
-            currentPointIndex++;
-            walkPointSet = false;
+        {
+             currentPointIndex++;
+             walkPointSet = false;
+        }
+            
     }
     private void SearchWalkPoint()
     {
         currentlyPatrolling = true;
         if(randomizedRoom == 1)
         {
-            
+            roomStorage = 1;
             if(currentPointIndex + 1 < office.Length)
             {
                 walkPoint = office[currentPointIndex];
@@ -149,6 +156,7 @@ public class Enemy_AIRecode : MonoBehaviour
         }
         if (randomizedRoom == 2)
         {
+            roomStorage = 2;
             if (currentPointIndex + 1 < officeB.Length)
             {
                 walkPoint = officeB[currentPointIndex];
@@ -162,19 +170,27 @@ public class Enemy_AIRecode : MonoBehaviour
         }
         if (randomizedRoom == 3)
         {
-
+            roomStorage = 3;
         }
-        if (randomizedRoom == 4)
+        if (randomizedRoom == 4 )
         {
-
+            roomStorage = 4;
         }
         if (randomizedRoom == 5)
         {
-
+            roomStorage = 5;
         }
 
         if (Physics.Raycast(walkPoint, -transform.up, 2f, whatIsGround))
             walkPointSet = true;
+    }
+    private void roomSet()
+    {
+        randomizedRoom = Random.Range(1, 7);
+        if (randomizedRoom != roomStorage)
+        {
+            agent.SetDestination(startPoints[randomizedRoom]);
+        }
     }
     private void ChasePlayer()
     {
@@ -182,10 +198,6 @@ public class Enemy_AIRecode : MonoBehaviour
     }
     #endregion
 
-    private void newRoom()
-    {
-
-    }
 
     #region misc
     //private void AttackPlayer()

@@ -21,10 +21,11 @@ public class Enemy_AIRecode : MonoBehaviour
 
 
     //Patroling
-    public Vector3[] office, officeB, officeC, officeD, officeE, officeF;
+    public Vector3[] office, officeB, officeC, officeD, officeE;
     public Vector3[] startPoints;
+    private bool currentlyListening;
+    private bool newTask;
     private int roomStorage;
-    private bool currentlyPatrolling;
     public int currentPointIndex;
     public int randomizedRoom;
     public Vector3 walkPoint;
@@ -75,15 +76,15 @@ public class Enemy_AIRecode : MonoBehaviour
         }if (noiseDetection == true)
         {
             PatrolNoise();
-        }else 
+        }if (newTask == true && currentlyListening == false)
+        {
+            roomSet();
+        }
+        else 
         {
             Patroling();
         }
-        //else
-        //{
-        //    randomizedRoom = Random.Range(1, 7);
-            
-        //}
+       
         
 
         //if (playerInAttackRange && playerInSightRange) AttackPlayer();
@@ -111,10 +112,17 @@ public class Enemy_AIRecode : MonoBehaviour
     }
     IEnumerator Listening()
     {
+        agent.isStopped = true;
+        currentlyListening = true;
         yield return new WaitForSeconds(waitTime);
        sightRange = sightRange + 7f;
         currentPointIndex = 0;
-        currentlyPatrolling = false;
+        newTask = true;
+        if(playerInSightRange == true && !objectInWay)
+        {
+            agent.isStopped = false;
+            StopCoroutine(Listening());
+        }
     }
     #endregion
 
@@ -138,7 +146,7 @@ public class Enemy_AIRecode : MonoBehaviour
     }
     private void SearchWalkPoint()
     {
-        currentlyPatrolling = true;
+     
         if(randomizedRoom == 1)
         {
             roomStorage = 1;
@@ -171,14 +179,44 @@ public class Enemy_AIRecode : MonoBehaviour
         if (randomizedRoom == 3)
         {
             roomStorage = 3;
+            if (currentPointIndex + 1 < officeC.Length)
+            {
+                walkPoint = officeC[currentPointIndex];
+                walkPointSet = true;
+            }
+            else
+            {
+                StartCoroutine(Listening());
+
+            }
         }
         if (randomizedRoom == 4 )
         {
             roomStorage = 4;
+            if (currentPointIndex + 1 < officeD.Length)
+            {
+                walkPoint = officeD[currentPointIndex];
+                walkPointSet = true;
+            }
+            else
+            {
+                StartCoroutine(Listening());
+
+            }
         }
         if (randomizedRoom == 5)
         {
             roomStorage = 5;
+            if (currentPointIndex + 1 < officeE.Length)
+            {
+                walkPoint = officeE[currentPointIndex];
+                walkPointSet = true;
+            }
+            else
+            {
+                StartCoroutine(Listening());
+
+            }
         }
 
         if (Physics.Raycast(walkPoint, -transform.up, 2f, whatIsGround))
@@ -186,10 +224,12 @@ public class Enemy_AIRecode : MonoBehaviour
     }
     private void roomSet()
     {
-        randomizedRoom = Random.Range(1, 7);
+        randomizedRoom = Random.Range(1, 6);
         if (randomizedRoom != roomStorage)
         {
+            newTask = false;
             agent.SetDestination(startPoints[randomizedRoom]);
+            walkPointSet = true;
         }
     }
     private void ChasePlayer()

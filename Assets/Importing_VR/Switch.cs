@@ -11,6 +11,7 @@ public class Switch : MonoBehaviour
     public bool switchHit = false;
     public float switchRotation = 100;
     private GameObject switchBase;
+    
 
     public Light spotLight;
     // Start is called before the first frame update

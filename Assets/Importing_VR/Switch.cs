@@ -11,9 +11,10 @@ public class Switch : MonoBehaviour
     public bool switchHit = false;
     public float switchRotation = 100;
     private GameObject switchBase;
-    
+    public bool Activate = false;
 
     public Light spotLight;
+    public Light spotLight2;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +26,7 @@ public class Switch : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(switchHit == true)
+        if(switchHit == true && Activate == false)
         {
             source.PlayOneShot(switchSound);
             switchHit = false;
@@ -33,12 +34,15 @@ public class Switch : MonoBehaviour
 
             if(on == true)
             {
+                Activate = true;
                 spotLight.enabled = true;
+                spotLight2.enabled = false;
                 transform.rotation = Quaternion.Euler(transform.eulerAngles.x + switchRotation, transform.eulerAngles.y, transform.eulerAngles.z);
             }
             else
             {
                 spotLight.enabled = false;
+                spotLight2.enabled = true;
                 transform.rotation = Quaternion.Euler(transform.eulerAngles.x - switchRotation, transform.eulerAngles.y, transform.eulerAngles.z);
             }
         }

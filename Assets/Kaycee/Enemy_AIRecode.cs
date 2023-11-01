@@ -22,16 +22,15 @@ public class Enemy_AIRecode : MonoBehaviour
 
     //Patroling
     public Vector3[] office, officeB, officeC, officeD, officeE;
-    public Vector3[] startPoints;
     public Vector3 agentLoc;
-    private bool currentlyListening;
+    public bool currentlyListening = false;
     public bool roomTime;
-    private bool newTask;
+    private bool newTask = true;
     private int roomStorage;
     public int currentPointIndex;
     public int randomizedRoom;
     public Vector3 walkPoint;
-    bool walkPointSet;
+    public bool walkPointSet;
     public float walkPointRange;
     public bool objectInWay;
     public int waitTime;
@@ -86,7 +85,7 @@ public class Enemy_AIRecode : MonoBehaviour
         }
         else 
         {
-            roomTime = true;
+            
             Patroling();
         }
        
@@ -111,25 +110,27 @@ public class Enemy_AIRecode : MonoBehaviour
         {
             newTask = true;
             noiseDetection = false;
-            
-            //will expand upon this and add a condensed patrol once that point is reached, and will have it move out of the room after a set period of time
+          
         }
     }
     IEnumerator Listening()
     {
         Debug.Log("listening");
         agent.isStopped = true;
-        currentlyListening = true;
+        
        
-        currentPointIndex = 0;
-        newTask = true;
+        
+        
         if(playerInSightRange == true && !objectInWay)
         {
             agent.isStopped = false;
             StopCoroutine(Listening());
         }
         yield return new WaitForSeconds(waitTime);
-        currentlyListening = false;
+        currentPointIndex = 0;
+        agent.isStopped = false;
+        roomSet();
+        
     }
     #endregion
 
@@ -149,7 +150,7 @@ public class Enemy_AIRecode : MonoBehaviour
         Vector3 distanceToWalkPoint = transform.position - walkPoint;
 
         //Walkpoint reached
-        if (distanceToWalkPoint.magnitude < 0.1f)
+        if (distanceToWalkPoint.magnitude < .1f && walkPointSet == true)
         {
              currentPointIndex++;
              walkPointSet = false;
@@ -164,12 +165,13 @@ public class Enemy_AIRecode : MonoBehaviour
             roomStorage = 1;
             if(currentPointIndex + 1 < office.Length)
             {
-                Debug.Log("B");
+                Debug.Log("A");
                 walkPoint = office[currentPointIndex];
                 walkPointSet = true;
             }
             else
             {
+                roomTime = false;
                 StartCoroutine(Listening());
                
             }
@@ -186,6 +188,7 @@ public class Enemy_AIRecode : MonoBehaviour
             }
             else
             {
+                roomTime = false;
                 StartCoroutine(Listening());
 
             }
@@ -195,12 +198,13 @@ public class Enemy_AIRecode : MonoBehaviour
             roomStorage = 3;
             if (currentPointIndex + 1 < officeC.Length)
             {
-                Debug.Log("B");
+                Debug.Log("C");
                 walkPoint = officeC[currentPointIndex];
                 walkPointSet = true;
             }
             else
             {
+                roomTime = false;
                 StartCoroutine(Listening());
 
             }
@@ -210,12 +214,13 @@ public class Enemy_AIRecode : MonoBehaviour
             roomStorage = 4;
             if (currentPointIndex + 1 < officeD.Length)
             {
-                Debug.Log("B");
+                Debug.Log("D");
                 walkPoint = officeD[currentPointIndex];
                 walkPointSet = true;
             }
             else
             {
+                roomTime = false;
                 StartCoroutine(Listening());
 
             }
@@ -225,12 +230,13 @@ public class Enemy_AIRecode : MonoBehaviour
             roomStorage = 5;
             if (currentPointIndex + 1 < officeE.Length)
             {
-                Debug.Log("B");
+                Debug.Log("E");
                 walkPoint = officeE[currentPointIndex];
                 walkPointSet = true;
             }
             else
             {
+                roomTime = false;
                 StartCoroutine(Listening());
 
             }
@@ -244,9 +250,11 @@ public class Enemy_AIRecode : MonoBehaviour
         randomizedRoom = Random.Range(1, 5);
         if (randomizedRoom != roomStorage)
         {
+            roomTime = true;
             newTask = false;
-            agent.SetDestination(startPoints[randomizedRoom]);
-            walkPointSet = true;
+            //agent.SetDestination(startPoints[randomizedRoom]);
+            
+            //walkPointSet = true;
         }
     }
     private void ChasePlayer()
@@ -261,6 +269,8 @@ public class Enemy_AIRecode : MonoBehaviour
     //{
     //    //Make sure enemy dosent move
     //    agent.SetDestination(transform.position);
+
+    // YOUR MOTHER RAAAGGHHHH
 
     //    transform.LookAt(player);
 

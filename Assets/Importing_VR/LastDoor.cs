@@ -3,18 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Walkie : MonoBehaviour
+public class LastDoor : MonoBehaviour
 {
-    public UnityEvent soundque;
+    public GameObject Switch;
+    public UnityEvent OpenExit;
     // Start is called before the first frame update
     void Start()
     {
-        soundque.Invoke();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Switch.GetComponent<Switch>().Activate == true)
+        {
+            OpenExit.Invoke();
+        }
     }
 }

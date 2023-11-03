@@ -21,7 +21,7 @@ public class Enemy_AIRecode : MonoBehaviour
 
 
     //Patroling
-    public Vector3[] office, officeB, officeC, officeD, officeE;
+    public Vector3[] room1, office, officeB, officeC, officeD, officeE, officeF;
     public Vector3 agentLoc;
     public bool currentlyListening = false;
     public bool roomTime;
@@ -241,13 +241,49 @@ public class Enemy_AIRecode : MonoBehaviour
 
             }
         }
+        if (randomizedRoom == 6)
+        {
+            roomStorage = 6;
+            if (currentPointIndex + 1 < room1.Length)
+            {
+                Debug.Log("E");
+                walkPoint = room1[currentPointIndex];
+                walkPointSet = true;
+            }
+            else
+            {
+                roomTime = false;
+                StartCoroutine(Listening());
+
+            }
+        }
+        if (randomizedRoom == 7)
+        {
+            roomStorage = 7;
+            if (currentPointIndex + 1 < officeF.Length)
+            {
+                Debug.Log("E");
+                walkPoint = officeF[currentPointIndex];
+                walkPointSet = true;
+            }
+            else
+            {
+                roomTime = false;
+                StartCoroutine(Listening());
+
+            }
+        }
+
+
 
         if (Physics.Raycast(walkPoint, -transform.up, 2f, whatIsGround))
             walkPointSet = true;
     }
+
+    
     private void roomSet()
     {
-        randomizedRoom = Random.Range(1, 5);
+        randomizedRoom = Random.Range(1, 7);
         if (randomizedRoom != roomStorage)
         {
             roomTime = true;

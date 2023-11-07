@@ -37,13 +37,13 @@ public class Switch : MonoBehaviour
                 Activate = true;
                 spotLight.enabled = true;
                 spotLight2.enabled = false;
-                transform.rotation = Quaternion.Euler(transform.eulerAngles.x + switchRotation, transform.eulerAngles.y, transform.eulerAngles.z);
+                transform.rotation = Quaternion.Euler(transform.eulerAngles.x, transform.eulerAngles.y + switchRotation, transform.eulerAngles.z);
             }
             else
             {
                 spotLight.enabled = false;
                 spotLight2.enabled = true;
-                transform.rotation = Quaternion.Euler(transform.eulerAngles.x - switchRotation, transform.eulerAngles.y, transform.eulerAngles.z);
+                transform.rotation = Quaternion.Euler(transform.eulerAngles.x, transform.eulerAngles.y - switchRotation, transform.eulerAngles.z);
             }
         }
     }

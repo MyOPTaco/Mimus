@@ -898,7 +898,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endPos: {x: 12.7, y: 1.2, z: -2.6}
-  speed: 2
+  speed: 5
   startPos: {x: 0, y: 0, z: 0}
   delay: 0
 --- !u!65 &65376579
@@ -1394,7 +1394,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endPos: {x: 44.66, y: 1.25, z: -5.827}
-  speed: 2
+  speed: 5
   startPos: {x: 0, y: 0, z: 0}
   delay: 0
 --- !u!65 &86879226
@@ -1882,7 +1882,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endPos: {x: 14.95, y: 1.2, z: 6.6}
-  speed: 2
+  speed: 5
   startPos: {x: 0, y: 0, z: 0}
   delay: 0
 --- !u!65 &117027411
@@ -2982,7 +2982,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endPos: {x: 25.535, y: 1.22, z: 7.9}
-  speed: 2
+  speed: 5
   startPos: {x: 0, y: 0, z: 0}
   delay: 0
 --- !u!65 &203449393
@@ -5928,7 +5928,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endPos: {x: 38.878, y: 1.22, z: -17.85}
-  speed: 2
+  speed: 5
   startPos: {x: 0, y: 0, z: 0}
   delay: 0
 --- !u!65 &480144072
@@ -6579,7 +6579,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endPos: {x: 10.4, y: 1.2, z: 3.6}
-  speed: 2
+  speed: 5
   startPos: {x: 0, y: 0, z: 0}
   delay: 0
 --- !u!65 &530869542
@@ -8272,7 +8272,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endPos: {x: 14.95, y: 1.2, z: 4.3}
-  speed: 2
+  speed: 5
   startPos: {x: 0, y: 0, z: 0}
   delay: 0
 --- !u!65 &618252890
@@ -8833,7 +8833,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endPos: {x: 38.878, y: 1.22, z: -15.68}
-  speed: 2
+  speed: 5
   startPos: {x: 0, y: 0, z: 0}
   delay: 0
 --- !u!65 &663219729
@@ -9119,7 +9119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endPos: {x: 12.7, y: 1.2, z: 3.6}
-  speed: 2
+  speed: 5
   startPos: {x: 0, y: 0, z: 0}
   delay: 0
 --- !u!65 &703887894
@@ -10219,7 +10219,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endPos: {x: 8.74, y: 1.22, z: 6.6}
-  speed: 2
+  speed: 5
   startPos: {x: 0, y: 0, z: 0}
   delay: 0
 --- !u!1 &857962404
@@ -10349,7 +10349,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endPos: {x: 44.66, y: 1.25, z: -11.122}
-  speed: 2
+  speed: 5
   startPos: {x: 0, y: 0, z: 0}
   delay: 0
 --- !u!65 &857974949
@@ -10632,7 +10632,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endPos: {x: 42.45, y: 1.25, z: -5.827}
-  speed: 2
+  speed: 5
   startPos: {x: 0, y: 0, z: 0}
   delay: 0
 --- !u!65 &885316002
@@ -12448,7 +12448,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endPos: {x: 25.535, y: 1.22, z: 10.15}
-  speed: 2
+  speed: 5
   startPos: {x: 0, y: 0, z: 0}
   delay: 0
 --- !u!65 &997459205
@@ -12653,7 +12653,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endPos: {x: 24.873, y: 1.22, z: -8.35}
-  speed: 2
+  speed: 5
   startPos: {x: 0, y: 0, z: 0}
   delay: 0
 --- !u!65 &1029870965
@@ -13862,7 +13862,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endPos: {x: 8.74, y: 1.22, z: 4.35}
-  speed: 2
+  speed: 5
   startPos: {x: 0, y: 0, z: 0}
   delay: 0
 --- !u!1 &1194695611
@@ -14500,7 +14500,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endPos: {x: 10.4, y: 1.2, z: -2.6}
-  speed: 2
+  speed: 5
   startPos: {x: 0, y: 0, z: 0}
   delay: 0
 --- !u!65 &1261290355
@@ -16859,7 +16859,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endPos: {x: 24.873, y: 1.22, z: -6.07}
-  speed: 2
+  speed: 5
   startPos: {x: 0, y: 0, z: 0}
   delay: 0
 --- !u!65 &1583389090
@@ -17171,7 +17171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endPos: {x: 31.774, y: 1.22, z: 10.15}
-  speed: 2
+  speed: 5
   startPos: {x: 0, y: 0, z: 0}
   delay: 0
 --- !u!65 &1601535589
@@ -17963,7 +17963,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endPos: {x: 42.45, y: 1.25, z: -11.122}
-  speed: 2
+  speed: 5
   startPos: {x: 0, y: 0, z: 0}
   delay: 0
 --- !u!65 &1653502307
@@ -20230,7 +20230,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endPos: {x: 31.774, y: 1.22, z: 7.9}
-  speed: 2
+  speed: 5
   startPos: {x: 0, y: 0, z: 0}
   delay: 0
 --- !u!65 &1843889126
@@ -20790,7 +20790,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1879792197}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.01
   m_Height: 0.02
@@ -21680,7 +21680,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1956278291}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.01
   m_Height: 0.02

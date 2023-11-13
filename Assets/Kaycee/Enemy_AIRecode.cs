@@ -125,9 +125,9 @@ public class Enemy_AIRecode : MonoBehaviour
             StopCoroutine(Listening());
         }
         yield return new WaitForSeconds(waitTime);
-        currentPointIndex = 0;
         agent.isStopped = false;
         roomSet();
+        roomTime = true;
         
     }
     #endregion
@@ -148,7 +148,7 @@ public class Enemy_AIRecode : MonoBehaviour
         Vector3 distanceToWalkPoint = transform.position - walkPoint;
 
         //Walkpoint reached
-        if (distanceToWalkPoint.magnitude < 1f && walkPointSet == true)
+        if (distanceToWalkPoint.magnitude < .5f)
         {
              currentPointIndex++;
              walkPointSet = false;
@@ -284,6 +284,7 @@ public class Enemy_AIRecode : MonoBehaviour
         randomizedRoom = Random.Range(1, 7);
         if (randomizedRoom != roomStorage)
         {
+            currentPointIndex = 0;
             roomTime = true;
             newTask = false;
             //agent.SetDestination(startPoints[randomizedRoom]);

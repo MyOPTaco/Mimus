@@ -1,4 +1,4 @@
-using System.Collections;
+    using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.AI;
 using UnityEngine;
@@ -79,7 +79,7 @@ public class Enemy_AIRecode : MonoBehaviour
         }if (noiseDetection == true)
         {
             PatrolNoise();
-        }if (newTask == true && currentlyListening == false)
+        }if(newTask == true)
         {
             roomSet();
         }
@@ -117,9 +117,7 @@ public class Enemy_AIRecode : MonoBehaviour
     {
         Debug.Log("listening");
         agent.isStopped = true;
-        
-       
-        
+        Debug.Log("yeah");
         
         if(playerInSightRange == true && !objectInWay)
         {
@@ -150,7 +148,7 @@ public class Enemy_AIRecode : MonoBehaviour
         Vector3 distanceToWalkPoint = transform.position - walkPoint;
 
         //Walkpoint reached
-        if (distanceToWalkPoint.magnitude < .1f && walkPointSet == true)
+        if (distanceToWalkPoint.magnitude < 1f && walkPointSet == true)
         {
              currentPointIndex++;
              walkPointSet = false;

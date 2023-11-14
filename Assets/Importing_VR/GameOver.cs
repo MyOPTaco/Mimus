@@ -5,8 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class GameOver : MonoBehaviour
 {
-    public void OnCollisionEnter(Collision collision)
+    public void OnTriggerEnter(Collider collision)
     {
-            SceneManager.LoadScene("MainMenu");
+        Debug.Log("test colliding");
+        SceneManager.LoadScene("MainMenu");
     }
 }

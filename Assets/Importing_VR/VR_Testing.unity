@@ -6061,6 +6061,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: de17e57070a30b94b90d316aeaa57749, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: bec8e43e8c025fa45933c8054ec3566b, type: 2}
     - target: {fileID: 5976724385963898531, guid: de17e57070a30b94b90d316aeaa57749, type: 3}
       propertyPath: m_Layer
       value: 9
@@ -12185,33 +12189,40 @@ MonoBehaviour:
   playerrrrrr: {fileID: 0}
   room1:
   - {x: 42.426, y: 1, z: -3.948}
+  - {x: 0, y: 0, z: 0}
   office:
   - {x: 12.606, y: 1, z: -4.812}
   - {x: 12.606, y: 1, z: -9.654}
   - {x: 21.9, y: 1, z: -9.654}
   - {x: 21.9, y: 1, z: -5.664}
+  - {x: 0, y: 0, z: 0}
   officeB:
   - {x: 26.74, y: 1, z: -7.017}
   - {x: 34.7, y: 1, z: -7.017}
   - {x: 34.7, y: 1, z: -17.033}
   - {x: 38.1605, y: 1, z: -17.33}
+  - {x: 0, y: 0, z: 0}
   officeC:
   - {x: 40.088, y: 1, z: -17.033}
   - {x: 46.109, y: 1, z: -17.033}
   - {x: 43.603, y: 1, z: -11.96}
+  - {x: 0, y: 0, z: 0}
   officeD:
   - {x: 42.46, y: 1, z: 9.73}
   - {x: 42.46, y: 1, z: 3.5}
   - {x: 34.715, y: 1, z: 9.37}
+  - {x: 0, y: 0, z: 0}
   officeE:
   - {x: 16.356, y: 1, z: 5.33}
   - {x: 20.094, y: 1, z: 7.223}
   - {x: 23.189, y: 1, z: 8.867}
+  - {x: 0, y: 0, z: 0}
   officeF:
   - {x: 7.18, y: 1, z: 4.14}
   - {x: 1.46, y: 1, z: 1.51}
   - {x: 1.46, y: 1, z: 6.39}
   - {x: 7.18, y: 1, z: 4.14}
+  - {x: 0, y: 0, z: 0}
   agentLoc: {x: 0, y: 0, z: 0}
   currentlyListening: 0
   roomTime: 0
